@@ -1,7 +1,9 @@
-const { Resend } = require("resend");
+import { Resend } from "resend";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-module.exports = async (req, res) => {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -13,13 +15,17 @@ module.exports = async (req, res) => {
       from: "Kapiz Contact <onboarding@resend.dev>",
       to: "jlplaza2003@gmail.com",
       subject: `New message from ${name}`,
-      reply_to: email,
+      replyTo: email,
       text: message,
     });
 
     res.status(200).json({ success: true });
-  } catch (err) {
+  } catch (err: unknown) {
     console.error("Resend error:", err);
-    res.status(500).json({ error: "Failed to send email" });
+
+    const errorMessage =
+      err instanceof Error ? err.message : "Failed to send email";
+
+    res.status(500).json({ error: errorMessage });
   }
-};
+}
