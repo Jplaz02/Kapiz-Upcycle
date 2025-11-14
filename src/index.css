@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Kapiz Upcycle Color System */
+    --background: 345 2% 38%; /* #615e5f - muted dark taupe */
+    --foreground: 43 81% 52%; /* #edb01e - rich golden */
+
+    --card: 345 2% 42%;
+    --card-foreground: 43 81% 52%;
+
+    --popover: 345 2% 40%;
+    --popover-foreground: 43 81% 52%;
+
+    --primary: 43 81% 52%; /* golden accent */
+    --primary-foreground: 345 2% 38%;
+
+    --secondary: 150 20% 86%; /* #d3e2dc - seafoam */
+    --secondary-foreground: 345 2% 38%;
+
+    --muted: 20 7% 51%; /* #8a7f78 - driftwood brown */
+    --muted-foreground: 0 0% 95%; /* cream */
+
+    --accent: 0 0% 95%; /* #f2f2f2 - muted cream */
+    --accent-foreground: 345 2% 38%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 20 7% 51%;
+    --input: 20 7% 45%;
+    --ring: 43 81% 52%;
+
+    --radius: 0.5rem;
+
+    /* Custom design tokens */
+    --gold: 43 81% 52%;
+    --taupe: 345 2% 38%;
+    --cream: 0 0% 95%;
+    --seafoam: 150 20% 86%;
+    --driftwood: 20 7% 51%;
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 345 2% 40%;
+    --sidebar-foreground: 43 81% 52%;
+    --sidebar-primary: 43 81% 52%;
+    --sidebar-primary-foreground: 345 2% 38%;
+    --sidebar-accent: 20 7% 51%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 20 7% 45%;
+    --sidebar-ring: 43 81% 52%;
+  }
+
+  .dark {
+    --background: 345 2% 38%;
+    --foreground: 43 81% 52%;
+    --card: 345 2% 42%;
+    --card-foreground: 43 81% 52%;
+    --popover: 345 2% 40%;
+    --popover-foreground: 43 81% 52%;
+    --primary: 43 81% 52%;
+    --primary-foreground: 345 2% 38%;
+    --secondary: 150 20% 86%;
+    --secondary-foreground: 345 2% 38%;
+    --muted: 20 7% 51%;
+    --muted-foreground: 0 0% 95%;
+    --accent: 0 0% 95%;
+    --accent-foreground: 345 2% 38%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 20 7% 51%;
+    --input: 20 7% 45%;
+    --ring: 43 81% 52%;
+    --sidebar-background: 345 2% 40%;
+    --sidebar-foreground: 43 81% 52%;
+    --sidebar-primary: 43 81% 52%;
+    --sidebar-primary-foreground: 345 2% 38%;
+    --sidebar-accent: 20 7% 51%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 20 7% 45%;
+    --sidebar-ring: 43 81% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
