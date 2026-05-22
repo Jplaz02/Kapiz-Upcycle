@@ -122,14 +122,15 @@ attention-pulse when it first appears.
 - **Reworked:** `Process` → `CustomOrderProcess` (renamed, new content/steps).
 - **Restyled only:** `Navbar`, `Hero`, `Mission`, `Gallery` → `Portfolio`,
   `Materials`, `Testimonials`, `Contact`, `EcoPromise`, `Footer`.
-- The contact route nav links in `Navbar` and `Footer` are updated to match the
-  renamed sections.
+- The anchor links in `Navbar` and `Footer` (e.g. `#gallery` → `#portfolio`,
+  `#process` → `#custom-orders`) are updated to match the renamed sections.
 
 ## 3. Jewelry Showcase Animations
 
-All animations use CSS keyframes + `IntersectionObserver` + the already-installed
-`embla-carousel-react`. **No new dependencies.** Only GPU-friendly properties
-(`transform`, `opacity`).
+All animations use CSS keyframes + `IntersectionObserver`. **No new
+dependencies.** Only GPU-friendly properties (`transform`, `opacity`) are
+animated. (`embla-carousel-react` is already installed and remains available if
+a carousel is wanted later, but the animations below do not require it.)
 
 ### Hero — cinematic entrance
 
