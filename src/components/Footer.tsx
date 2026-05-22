@@ -35,6 +35,7 @@ export const Footer = () => {
             <img
               src={logoFull}
               alt="Kapiz Upcycle"
+              loading="lazy"
               className="h-28 w-auto mx-auto"
             />
           </button>

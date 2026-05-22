@@ -5,11 +5,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import product1 from "@/assets/product-1.jpg";
-import product2 from "@/assets/product-2.png";
-import product3 from "@/assets/product-3.png";
-import product4 from "@/assets/product-4.png";
-import product5 from "@/assets/product-5.png";
-import product6 from "@/assets/product-6.png";
+import product2 from "@/assets/product-2.jpg";
+import product3 from "@/assets/product-3.jpg";
+import product4 from "@/assets/product-4.jpg";
+import product5 from "@/assets/product-5.jpg";
+import product6 from "@/assets/product-6.jpg";
 
 const pieces = [
   {
@@ -99,6 +99,7 @@ export const Portfolio = () => {
                 <img
                   src={piece.image}
                   alt={piece.name}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <span className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-charcoal/80 to-transparent translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">

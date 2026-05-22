@@ -41,6 +41,7 @@ export const Mission = () => {
             <img
               src={missionImage}
               alt="Artisan workspace with natural materials"
+              loading="lazy"
               className="rounded-2xl shadow-xl w-full h-auto object-cover"
             />
             <div className="absolute -bottom-5 -left-5 hidden sm:block bg-card border border-border rounded-xl shadow-lg px-6 py-4">
