@@ -2,92 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Kapiz Upcycle design system — light & airy boutique. All colors HSL. */
 
 @layer base {
   :root {
-    /* Kapiz Upcycle Color System */
-    --background: 345 2% 38%; /* #615e5f - muted dark taupe */
-    --foreground: 43 81% 52%; /* #edb01e - rich golden */
+    --background: 40 38% 96%;        /* ivory #FAF7F0 */
+    --foreground: 30 6% 16%;         /* charcoal #2B2826 */
 
-    --card: 345 2% 42%;
-    --card-foreground: 43 81% 52%;
+    --card: 40 56% 99%;              /* soft white */
+    --card-foreground: 30 6% 16%;
 
-    --popover: 345 2% 40%;
-    --popover-foreground: 43 81% 52%;
+    --popover: 40 56% 99%;
+    --popover-foreground: 30 6% 16%;
 
-    --primary: 43 81% 52%; /* golden accent */
-    --primary-foreground: 345 2% 38%;
+    --primary: 41 78% 53%;           /* marigold gold #E5A828 */
+    --primary-foreground: 30 6% 16%; /* charcoal text on gold */
 
-    --secondary: 150 20% 86%; /* #d3e2dc - seafoam */
-    --secondary-foreground: 345 2% 38%;
+    --secondary: 150 24% 86%;        /* seafoam #D3E2DC */
+    --secondary-foreground: 30 6% 16%;
 
-    --muted: 20 7% 51%; /* #8a7f78 - driftwood brown */
-    --muted-foreground: 0 0% 95%; /* cream */
+    --muted: 40 24% 92%;
+    --muted-foreground: 30 8% 40%;   /* warm gray #6B635B */
 
-    --accent: 0 0% 95%; /* #f2f2f2 - muted cream */
-    --accent-foreground: 345 2% 38%;
+    --accent: 40 33% 92%;
+    --accent-foreground: 30 6% 16%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 38% 96%;
 
-    --border: 20 7% 51%;
-    --input: 20 7% 45%;
-    --ring: 43 81% 52%;
+    --border: 38 29% 87%;            /* warm sand #E8E1D5 */
+    --input: 38 29% 87%;
+    --ring: 41 78% 53%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Custom design tokens */
-    --gold: 43 81% 52%;
-    --taupe: 345 2% 38%;
-    --cream: 0 0% 95%;
-    --seafoam: 150 20% 86%;
-    --driftwood: 20 7% 51%;
+    /* Custom brand tokens */
+    --gold: 41 78% 53%;
+    --gold-deep: 40 69% 39%;         /* readable gold text on light #A6781F */
+    --charcoal: 30 6% 16%;
+    --cream: 40 38% 96%;
+    --seafoam: 150 24% 86%;
 
-    /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 345 2% 40%;
-    --sidebar-foreground: 43 81% 52%;
-    --sidebar-primary: 43 81% 52%;
-    --sidebar-primary-foreground: 345 2% 38%;
-    --sidebar-accent: 20 7% 51%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 20 7% 45%;
-    --sidebar-ring: 43 81% 52%;
+    --sidebar-background: 40 38% 96%;
+    --sidebar-foreground: 30 6% 16%;
+    --sidebar-primary: 41 78% 53%;
+    --sidebar-primary-foreground: 30 6% 16%;
+    --sidebar-accent: 40 33% 92%;
+    --sidebar-accent-foreground: 30 6% 16%;
+    --sidebar-border: 38 29% 87%;
+    --sidebar-ring: 41 78% 53%;
   }
 
+  /* No separate dark mode; .dark mirrors :root so the site stays light. */
   .dark {
-    --background: 345 2% 38%;
-    --foreground: 43 81% 52%;
-    --card: 345 2% 42%;
-    --card-foreground: 43 81% 52%;
-    --popover: 345 2% 40%;
-    --popover-foreground: 43 81% 52%;
-    --primary: 43 81% 52%;
-    --primary-foreground: 345 2% 38%;
-    --secondary: 150 20% 86%;
-    --secondary-foreground: 345 2% 38%;
-    --muted: 20 7% 51%;
-    --muted-foreground: 0 0% 95%;
-    --accent: 0 0% 95%;
-    --accent-foreground: 345 2% 38%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 95%;
-    --border: 20 7% 51%;
-    --input: 20 7% 45%;
-    --ring: 43 81% 52%;
-    --sidebar-background: 345 2% 40%;
-    --sidebar-foreground: 43 81% 52%;
-    --sidebar-primary: 43 81% 52%;
-    --sidebar-primary-foreground: 345 2% 38%;
-    --sidebar-accent: 20 7% 51%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 20 7% 45%;
-    --sidebar-ring: 43 81% 52%;
+    --background: 40 38% 96%;
+    --foreground: 30 6% 16%;
+    --card: 40 56% 99%;
+    --card-foreground: 30 6% 16%;
+    --popover: 40 56% 99%;
+    --popover-foreground: 30 6% 16%;
+    --primary: 41 78% 53%;
+    --primary-foreground: 30 6% 16%;
+    --secondary: 150 24% 86%;
+    --secondary-foreground: 30 6% 16%;
+    --muted: 40 24% 92%;
+    --muted-foreground: 30 8% 40%;
+    --accent: 40 33% 92%;
+    --accent-foreground: 30 6% 16%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 38% 96%;
+    --border: 38 29% 87%;
+    --input: 38 29% 87%;
+    --ring: 41 78% 53%;
+    --sidebar-background: 40 38% 96%;
+    --sidebar-foreground: 30 6% 16%;
+    --sidebar-primary: 41 78% 53%;
+    --sidebar-primary-foreground: 30 6% 16%;
+    --sidebar-accent: 40 33% 92%;
+    --sidebar-accent-foreground: 30 6% 16%;
+    --sidebar-border: 38 29% 87%;
+    --sidebar-ring: 41 78% 53%;
   }
 }
 
@@ -111,80 +107,74 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .animate-fade-up {
-    animation: fadeUp 0.8s ease-out forwards;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-
-  .animate-slide-in-left {
-    animation: slideInLeft 0.8s ease-out forwards;
-  }
-
-  .animate-slide-in-right {
-    animation: slideInRight 0.8s ease-out forwards;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
-  }
-
   .text-balance {
     text-wrap: balance;
   }
 
+  /* Existing reveal animations (kept) */
+  .animate-fade-up { animation: fadeUp 0.8s ease-out forwards; }
+  .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+  .animate-scale-in { animation: scaleIn 0.6s ease-out forwards; }
+
+  /* Jewelry showcase animations (new) */
+  .animate-ken-burns { animation: kenBurns 22s ease-in-out infinite alternate; }
+  .animate-float { animation: float 4s ease-in-out infinite; }
+  .animate-pulse-once { animation: pulseOnce 1.2s ease-in-out 1; }
+
   @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
-
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slideInRight {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
   @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes kenBurns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.12); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes pulseOnce {
+    0%, 100% { box-shadow: 0 10px 25px -5px hsl(var(--primary) / 0.3); }
+    50% { box-shadow: 0 10px 38px 2px hsl(var(--primary) / 0.6); }
+  }
+}
+
+/* Signature shine-sweep: a light glint glides across a piece on card hover.
+   Apply `.shine-sweep` to a positioned, overflow-hidden element inside a
+   Tailwind `group` container. */
+.shine-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    hsl(0 0% 100% / 0.45) 50%,
+    transparent 65%
+  );
+  transform: translateX(-160%);
+  transition: transform 0.85s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+.group:hover .shine-sweep::after {
+  transform: translateX(160%);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -58,10 +58,10 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         gold: "hsl(var(--gold))",
-        taupe: "hsl(var(--taupe))",
+        "gold-deep": "hsl(var(--gold-deep))",
+        charcoal: "hsl(var(--charcoal))",
         cream: "hsl(var(--cream))",
         seafoam: "hsl(var(--seafoam))",
-        driftwood: "hsl(var(--driftwood))",
       },
       fontFamily: {
         serif: ['Playfair Display', 'serif'],
