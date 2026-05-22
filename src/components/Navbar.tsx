@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/kapiz-logo.png";
+import logoMark from "@/assets/kapiz-logo.png";
 
 const navLinks = [
-  { name: "Mission", href: "#mission" },
-  { name: "Gallery", href: "#gallery" },
+  { name: "Our Story", href: "#mission" },
+  { name: "Portfolio", href: "#portfolio" },
+  { name: "How It Works", href: "#custom-orders" },
   { name: "Materials", href: "#materials" },
-  { name: "Process", href: "#process" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: "#contact" },
+  { name: "Reviews", href: "#testimonials" },
 ];
 
 export const Navbar = () => {
@@ -17,20 +16,14 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    setIsMobileMenuOpen(false);
   };
 
   const scrollToTop = () => {
@@ -43,40 +36,52 @@ export const Navbar = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-background/95 backdrop-blur-md shadow-lg border-b border-primary/20"
-            : "bg-background/80 backdrop-blur-sm"
+            ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border"
+            : "bg-background/70 backdrop-blur-sm"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
             <button
               onClick={scrollToTop}
               className="flex items-center gap-3 hover:opacity-80 transition-opacity"
             >
-              <h1 className="text-3xl font-bold text-primary">Kapiz Upcycle</h1>
+              <img src={logoMark} alt="Kapiz Upcycle" className="h-11 w-auto" />
+              <span className="flex flex-col leading-tight text-left">
+                <span className="font-serif text-xl font-bold text-foreground tracking-wide">
+                  Kapiz Upcycle
+                </span>
+                <span className="text-[0.6rem] uppercase tracking-[0.25em] text-gold-deep">
+                  Sustainable Artistry
+                </span>
+              </span>
             </button>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-accent hover:text-primary transition-colors font-medium relative group"
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors relative group"
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                 </button>
               ))}
+              <Button
+                onClick={() => scrollToSection("#contact")}
+                className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-full px-6"
+              >
+                Start a Custom Order
+              </Button>
             </div>
 
-            {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden text-primary hover:bg-primary/10"
+              className="md:hidden text-foreground hover:bg-foreground/5"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -87,29 +92,32 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ${
             isMobileMenuOpen ? "max-h-96" : "max-h-0"
           }`}
         >
-          <div className="bg-card/95 backdrop-blur-md border-t border-primary/20">
-            <div className="px-6 py-4 space-y-3">
-              {navLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => scrollToSection(link.href)}
-                  className="block w-full text-left text-accent hover:text-primary transition-colors py-2 font-medium"
-                >
-                  {link.name}
-                </button>
-              ))}
-            </div>
+          <div className="bg-background/98 backdrop-blur-md border-t border-border px-6 py-4 space-y-1">
+            {navLinks.map((link) => (
+              <button
+                key={link.name}
+                onClick={() => scrollToSection(link.href)}
+                className="block w-full text-left text-foreground/80 hover:text-foreground py-2.5 font-medium"
+              >
+                {link.name}
+              </button>
+            ))}
+            <Button
+              onClick={() => scrollToSection("#contact")}
+              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium rounded-full mt-2"
+            >
+              Start a Custom Order
+            </Button>
           </div>
         </div>
       </nav>
 
-      {/* Spacer to prevent content from going under fixed navbar */}
+      {/* Spacer to offset the fixed navbar */}
       <div className="h-20" />
     </>
   );
