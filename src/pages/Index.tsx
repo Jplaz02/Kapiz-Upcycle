@@ -1,27 +1,29 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Mission } from "@/components/Mission";
-import { Gallery } from "@/components/Gallery";
+import { Portfolio } from "@/components/Portfolio";
+import { CustomOrderProcess } from "@/components/CustomOrderProcess";
 import { Materials } from "@/components/Materials";
-import { Process } from "@/components/Process";
 import { Testimonials } from "@/components/Testimonials";
-import { Contact } from "@/components/Contact";
 import { EcoPromise } from "@/components/EcoPromise";
+import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <Hero />
       <Mission />
-      <Gallery />
+      <Portfolio />
+      <CustomOrderProcess />
       <Materials />
-      <Process />
       <Testimonials />
-      <Contact />
       <EcoPromise />
+      <Contact />
       <Footer />
+      <FloatingCTA />
     </div>
   );
 };
