@@ -52,7 +52,7 @@ export const CustomOrderProcess = () => {
           {/* Connecting line that draws in on scroll (desktop only) */}
           <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-border overflow-hidden">
             <div
-              className={`h-full bg-primary origin-left transition-transform duration-[1500ms] ease-out ${
+              className={`h-full bg-primary origin-left transition-transform [transition-duration:1500ms] ease-out ${
                 isVisible ? "scale-x-100" : "scale-x-0"
               }`}
             />
